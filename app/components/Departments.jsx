@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import GridPattern from "../../components/ui/grid";
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const Departments = () => {
   const data = {
     sections: [
@@ -292,7 +294,7 @@ const Departments = () => {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <Image
-                  src="/models/rocket-model.png"
+                  src={`${basePath}/models/rocket-model.png`}
                   alt="Description of image"
                   layout="fill"
                   objectFit="contain"

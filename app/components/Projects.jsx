@@ -1,13 +1,15 @@
 import DotPattern from "@/components/ui/dot";
 import React from "react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const Projects = () => {
   const sections = [
     {
       id: 1,
       heading: "Poseidon",
       date: "12/06/2023",
-      image: "/poseidon.png",
+      image: `${basePath}/poseidon.png`,
       description:
         "Poseidon, our inaugural build for the Technoxian Water Rocket Challenge, marked Ignition's entry into competitive rocketry. It provided key insights into aerodynamics and design, fueling progress for future projects.",
       status: "Completed",
@@ -20,7 +22,7 @@ const Projects = () => {
       id: 2,
       heading: "Jericho",
       date: "06/08/2023",
-      image: "/jericho.png",
+      image: `${basePath}/jericho.png`,
       description:
         "Jericho introduced Ignition to solid-fuel rocketry, expanding our knowledge of rocket mechanics and system integration. This project deepened our expertise and prepared us for more advanced builds.",
       status: "Discontinued",
@@ -35,7 +37,7 @@ const Projects = () => {
       id: 3,
       heading: "Pioneer",
       date: "31/10/2023",
-      image: "/pioneer.png",
+      image: `${basePath}/pioneer.png`,
       description:
         "Pioneer is a high-powered rocket designed to reach a 1 km apogee, powered by our SRAD motor. It carries Suryasat, a CANSAT studying UV radiation effects at high altitudes, advancing our scientific research contributions.",
       status: "Ongoing: launch approval pending",
@@ -51,7 +53,7 @@ const Projects = () => {
       id: 4,
       heading: "IgniteX",
       date: "24/10/2024",
-      image: "/ignitexx.png",
+      image: `${basePath}/ignitexx.png`,
       description:
         "IgniteX is our entry for the InSpace competition, featuring innovative recovery systems and a deployable CANSAT at 1 km. This project showcases our advancements in design, creativity, and engineering.",
       status: "Ongoing",

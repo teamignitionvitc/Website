@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { MousePointer2Icon, MailIcon } from "lucide-react";
 import DotPattern from "@/components/ui/dot";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const Footer = ({ className = "" }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -31,7 +33,7 @@ const Footer = ({ className = "" }) => {
     <div className={`relative p-4 w-full overflow-hidden bg-white text-black select-text ${className}`}>
       <DotPattern width={20} height={20} cx={1} cy={1} cr={1} />
       <div className={`absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "pointer-events-none"}`}>
-        <img src="/location/vit.png" alt="Team Ignition" className="object-contain scale-100 mb-2" />
+        <img src={`${basePath}/location/vit.png`} alt="Team Ignition" className="object-contain scale-100 mb-2" />
         <div className="absolute transform -translate-x-1/2 -translate-y-1/2 dot"></div>
       </div>
 

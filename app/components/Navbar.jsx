@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const Navbar = ({ handleScrollTo }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -72,7 +74,7 @@ const Navbar = ({ handleScrollTo }) => {
             className="hover:underline"
           >
             <Image
-              src="/logo/head-logo.png"
+              src={`${basePath}/logo/head-logo.png`}
               alt="Team Logo"
               width={120}
               height={50}

@@ -8,6 +8,8 @@ import GridPattern from "@/components/ui/grid";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { ShineBorder } from "@/components/ui/shine-border";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const Sponsors = ({ setIsModalOpen }) => {
   const containerRef = useRef(null);
   const div1Ref = useRef(null);
@@ -60,7 +62,7 @@ const Sponsors = ({ setIsModalOpen }) => {
               >
                 <div className="bg-[#0f0f0f] h-full w-full rounded-md flex items-center justify-center">
                   <Image
-                    src={"/sponsors/altium.png"}
+                    src={`${basePath}/sponsors/altium.png`}
                     alt="Altium"
                     width={140}
                     height={60}
@@ -75,7 +77,7 @@ const Sponsors = ({ setIsModalOpen }) => {
               >
                 <div className="bg-[#0f0f0f] h-full w-full rounded-md flex items-center justify-center">
                   <Image
-                    src={"/sponsors/ansys-white.png"}
+                    src={`${basePath}/sponsors/ansys-white.png`}
                     alt="Ansys"
                     width={120}
                     height={60}
@@ -94,7 +96,7 @@ const Sponsors = ({ setIsModalOpen }) => {
               >
                 <div className="bg-[#0f0f0f] h-full w-full rounded-md flex items-center justify-center">
                   <Image
-                    src={"/sponsors/solidworks.png"}
+                    src={`${basePath}/sponsors/solidworks.png`}
                     alt="Altium"
                     width={130}
                     height={60}
@@ -108,7 +110,7 @@ const Sponsors = ({ setIsModalOpen }) => {
               >
                 <div className="bg-[#0f0f0f] h-full w-full rounded-md flex items-center justify-center">
                   <Image
-                    src={"/sponsors/innovator-academy.png"}
+                    src={`${basePath}/sponsors/innovator-academy.png`}
                     alt="Altium"
                     width={90}
                     height={60}
@@ -139,14 +141,14 @@ const Sponsors = ({ setIsModalOpen }) => {
               color={["#A07CFE", "#FE8FB5", "#FFBE7B", "#A07CFE", "#FFFFFF"]}
             >
               <Image
-                src="/logo/head-logo.png"
+                src={`${basePath}/logo/head-logo.png`}
                 alt="Team Logo"
                 width={160}
                 height={60}
                 className="md:hidden"
               />
               <Image
-                src="/logo/head-logo.png"
+                src={`${basePath}/logo/head-logo.png`}
                 alt="Team Logo"
                 width={200}
                 height={80}

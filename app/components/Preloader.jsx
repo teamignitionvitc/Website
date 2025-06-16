@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const Preloader = ({
   onComplete,
   innerCircleSize = 24,
@@ -326,7 +328,7 @@ const Preloader = ({
           transition={{ duration: 0.5, delay: 0 }}
         >
           <Image
-            src="/logo/3-upscaled.png"
+            src={`${basePath}/logo/3-upscaled.png`}
             alt="Logo"
             width={500}
             height={500}

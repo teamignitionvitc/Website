@@ -2,25 +2,27 @@ import React from "react";
 import Image from "next/image";
 import ImageAccordion from "@/components/ui/image-accordian";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const About = () => {
   const images = [
     {
-      src: "/group-pictures/image-2.jpg",
+      src: `${basePath}/group-pictures/image-2.jpg`,
       alt: "Special Team Expo VIT 2024",
       title: "Special Team Expo VIT - 2024",
     },
     {
-      src: "/group-pictures/image-5.jpg",
+      src: `${basePath}/group-pictures/image-5.jpg`,
       alt: "Image 2",
       title: "Lift Off 2024",
     },
     {
-      src: "/group-pictures/image-3.jpg",
+      src: `${basePath}/group-pictures/image-3.jpg`,
       alt: "Image 3",
       title: "SRAD K class Solid Motor: Static  Test 1",
     },
     {
-      src: "/group-pictures/image-4.jpg",
+      src: `${basePath}/group-pictures/image-4.jpg`,
       alt: "Image 4",
       title: "SRAD K class Solid Motor: Static  Test 2",
     },
