@@ -40,7 +40,7 @@ const About = () => {
             </div>
             <div className="w-full relative flex justify-center items-center px-2 md:px-8">
               <Image
-                src="/group-pictures/image-6.jpeg"
+                src={`$${basePath}/group-pictures/image-6.jpeg`}
                 alt="Group Picture"
                 height={100}
                 width={300}
