@@ -83,7 +83,7 @@ export default function Hero() {
 
     const timer2 = setTimeout(() => {
       setShowChakra(true);
-    }, 5700);
+    }, 5800);
 
     return () => {
       clearTimeout(timer1);
@@ -127,12 +127,12 @@ export default function Hero() {
         </div>
 
         <div className="w-full h-full flex flex-col md:flex-row pt-[4.5rem]">
-          <div className="absolute w-screen h-screen overflow-hidden">
+          <div className="absolute w-screen h-screen overflow-hidden z-40">
             <CircleIcon />
           </div>
 
           <motion.div
-            className="group h-16 md:h-full w-full md:w-32 flex flex-col items-center z-40"
+            className="group h-16 md:h-full w-full md:w-32 flex flex-col items-center z-10"
             initial={{ borderRightWidth: 0 }}
             animate={{ borderRightWidth: 1 }}
             transition={{ duration: 0.75, delay: 4.7 }}
@@ -147,7 +147,7 @@ export default function Hero() {
               }}
               animate={
                 secondPhase
-                  ? { scaleY: 1, width: "2.5rem", backgroundColor: "#fb923c" }
+                  ? { scaleY: 1, width: "3rem", backgroundColor: "#fb923c" }
                   : { scaleY: 1 }
               }
               transition={{ duration: 0.5, delay: 4.9 }}
@@ -163,12 +163,12 @@ export default function Hero() {
                 secondPhase
                   ? {
                       height: "15rem",
-                      width: "2.5rem",
+                      width: "3rem",
                       borderRadius: "0rem",
                     }
                   : {
                       height: "5rem",
-                      width: "2.5rem",
+                      width: "3rem",
                       borderRadius: "0rem",
                     }
               }
@@ -195,7 +195,7 @@ export default function Hero() {
               }}
               animate={
                 secondPhase
-                  ? { scaleY: 1, width: "2.5rem", backgroundColor: "#22c55e" }
+                  ? { scaleY: 1, width: "3rem", backgroundColor: "#22c55e" }
                   : { scaleY: 1 }
               }
               transition={{ duration: 0.5, delay: 4.9 }}
