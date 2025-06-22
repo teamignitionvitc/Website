@@ -64,7 +64,7 @@ const Navbar = ({ handleScrollTo }) => {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 right-0 flex justify-between p-2 md:p-4 px-4 md:px-8 md:pl-[0.28rem] bg-black/70 backdrop-blur-lg text-white z-40 transition-all duration-500 font-bn ${
+        className={`fixed top-0 left-0 right-0 flex justify-between p-2 md:p-4 px-4 md:px-8 md:pl-[0.29rem] bg-black/70 backdrop-blur-lg text-white z-40 transition-all duration-500 font-bn ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >

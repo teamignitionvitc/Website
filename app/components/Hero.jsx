@@ -79,11 +79,11 @@ export default function Hero() {
   useEffect(() => {
     const timer1 = setTimeout(() => {
       setSecondPhase(true);
-    }, 1250);
+    }, 1200);
 
     const timer2 = setTimeout(() => {
       setShowChakra(true);
-    }, 6000);
+    }, 5700);
 
     return () => {
       clearTimeout(timer1);
@@ -96,16 +96,16 @@ export default function Hero() {
     <div id="hero" className="relative h-[200vh] w-screen">
       <div className="h-screen text-white w-full sticky top-0">
         <div className="absolute flex flex-col items-center w-full h-full">
-          {/* <Particles
+          <Particles
             className="hidden md:inline-block absolute inset-0 w-full h-screen"
-            quantity={500}
+            quantity={300}
             ease={100}
           />
           <Particles
             className="md:hidden absolute inset-0 w-full h-screen"
             quantity={100}
             ease={100}
-          /> */}
+          />
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: "100%" }}
@@ -177,8 +177,8 @@ export default function Hero() {
               <Image
                 width={50}
                 height={50}
-                alt="chakra"
-                src="/flag/Ashoka_Chakra.svg"
+                alt="ashoka-chakra"
+                src="/flag/ashoka-chakra.svg"
                 className={`transition-all duration-1000  ${
                   showChakra
                     ? "opacity-100 size-8"
@@ -198,7 +198,7 @@ export default function Hero() {
                   ? { scaleY: 1, width: "2.5rem", backgroundColor: "#22c55e" }
                   : { scaleY: 1 }
               }
-              transition={{ duration: 0.5, delay: 5.1 }}
+              transition={{ duration: 0.5, delay: 4.9 }}
             />
           </motion.div>
 
