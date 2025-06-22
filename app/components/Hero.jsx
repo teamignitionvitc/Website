@@ -126,8 +126,8 @@ export default function Hero() {
               animate={{ scaleY: 1 }}
               transition={{ duration: 0.75, delay: 4.9 }}
             />
-            <div className="h-10 group-hover:w-24 transform -translate-y-1/2 px-2 md:-rotate-90 font-bn text-2xl border-[1.5px] border-white/20 group-hover:border-white bg-black hover:bg-white hover:text-black z-40 transition-all duration-700 flex items-center justify-center">
-              <Image width={20} height={20} alt="chakra" src="/flag/Ashoka_Chakra.svg" />
+            <div className="h-24 group-hover:h-36 w-10 transform px-2 font-bn text-2xl border-[1.5px] border-white/20 group-hover:border-white bg-white hover:text-black z-40 transition-all duration-700 flex items-center justify-center">
+              <Image width={50} height={50} alt="chakra" src="/flag/Ashoka_Chakra.svg" />
             </div>
             <motion.div
               className="h-[55%] w-[1px] group-hover:w-10 transition-all duration-700 bg-white/20 group-hover:bg-green-400 transform -translate-x-1/2 hidden md:block "
