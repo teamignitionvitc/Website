@@ -4,6 +4,7 @@ import TagLine from "./TagLine";
 import Particles from "@/components/ui/particles";
 import NumberFlow from "@number-flow/react";
 import RotatingSphere from "@/components/ui/globe";
+import Image from "next/image";
 
 export default function Hero() {
   const controls = useAnimation();
@@ -77,7 +78,7 @@ export default function Hero() {
     <div id="hero" className="relative h-[200vh] w-screen">
       <div className="h-screen text-white w-full sticky top-0">
         <div className="absolute flex flex-col items-center w-full h-full">
-          <Particles
+          {/* <Particles
             className="hidden md:inline-block absolute inset-0 w-full h-screen"
             quantity={500}
             ease={100}
@@ -86,7 +87,7 @@ export default function Hero() {
             className="md:hidden absolute inset-0 w-full h-screen"
             quantity={100}
             ease={100}
-          />
+          /> */}
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: "100%" }}
@@ -113,23 +114,23 @@ export default function Hero() {
           </div>
 
           <motion.div
-            className="h-16 md:h-full w-full md:w-32 relative"
+            className="group h-16 md:h-full w-full md:w-32 flex flex-col items-center"
             initial={{ borderRightWidth: 0 }}
             animate={{ borderRightWidth: 1 }}
             transition={{ duration: 0.75, delay: 4.7 }}
             style={{ borderColor: "rgba(255,255,255,0.2)" }}
           >
             <motion.div
-              className="absolute md:top-0 md:bottom-[60%] left-1/2 w-[1px] bg-white/20 transform -translate-x-1/2 hidden md:block"
+              className="h-[45%] w-[1px] group-hover:w-10 transition-all duration-700 bg-white/20 group-hover:bg-orange-400 transform -translate-x-1/2 hidden md:block "
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 0.75, delay: 4.9 }}
             />
-            <h2 className="absolute md:top-[40%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 md:-rotate-90 font-bn text-2xl border-[1.5px] border-white/20 bg-black hover:bg-white hover:text-black z-40 hover:shadow-[0px_0px_20px_#ffffff] transition-all duration-700 hover:rounded-lg">
-              INDIA
-            </h2>
+            <div className="h-10 group-hover:w-24 transform -translate-y-1/2 px-2 md:-rotate-90 font-bn text-2xl border-[1.5px] border-white/20 group-hover:border-white bg-black hover:bg-white hover:text-black z-40 transition-all duration-700 flex items-center justify-center">
+              <Image width={20} height={20} alt="chakra" src="/flag/Ashoka_Chakra.svg" />
+            </div>
             <motion.div
-              className="absolute md:top-[40%] md:bottom-0 left-1/2 w-[1px] bg-white/20 transform -translate-x-1/2 hidden md:block"
+              className="h-[55%] w-[1px] group-hover:w-10 transition-all duration-700 bg-white/20 group-hover:bg-green-400 transform -translate-x-1/2 hidden md:block "
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 0.75, delay: 5.1 }}
