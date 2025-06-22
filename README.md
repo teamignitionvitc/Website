@@ -1,6 +1,4 @@
-This is the official GitHub source code mirror of Ignition's current [portfolio page](https://ignition-website.vercel.app/).
-
-Current deployment is handled by [Basith](https://github.com/basith-ahmed), ping for any issue related to it's deployment.
+This is the official GitHub source code of Ignition's current [portfolio page](https://teamignitionvitc.github.io/Website/).
 
 ### How to Run
 
