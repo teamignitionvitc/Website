@@ -73,6 +73,16 @@ export default function Hero() {
   };
 
   // -------------------------------------------
+  const [secondPhase, setSecondPhase] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSecondPhase(true);
+    }, 400 + 500); // delay + duration in ms
+
+    return () => clearTimeout(timer);
+  }, []);
+  // -------------------------------------------
 
   return (
     <div id="hero" className="relative h-[200vh] w-screen">
@@ -114,25 +124,53 @@ export default function Hero() {
           </div>
 
           <motion.div
-            className="group h-16 md:h-full w-full md:w-32 flex flex-col items-center"
+            className="group h-16 md:h-full w-full md:w-32 flex flex-col items-center z-40"
             initial={{ borderRightWidth: 0 }}
             animate={{ borderRightWidth: 1 }}
             transition={{ duration: 0.75, delay: 4.7 }}
             style={{ borderColor: "rgba(255,255,255,0.2)" }}
           >
             <motion.div
-              className="h-[45%] w-[1px] group-hover:w-10 transition-all duration-700 bg-white/20 group-hover:bg-orange-400 transform -translate-x-1/2 hidden md:block "
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
+              className="h-[45%] transform -translate-x-1/2 hidden md:block"
+              initial={{
+                scaleY: 0,
+                width: "1px",
+                backgroundColor: "rgba(255,255,255,0.2)",
+              }}
+              animate={
+                secondPhase
+                  ? { scaleY: 1, width: "2.5rem", backgroundColor: "#fb923c" }
+                  : { scaleY: 1 }
+              }
               transition={{ duration: 0.75, delay: 4.9 }}
             />
-            <div className="h-24 group-hover:h-36 w-10 transform px-2 font-bn text-2xl border-[1.5px] border-white/20 group-hover:border-white bg-white hover:text-black z-40 transition-all duration-700 flex items-center justify-center">
-              <Image width={50} height={50} alt="chakra" src="/flag/Ashoka_Chakra.svg" />
-            </div>
             <motion.div
-              className="h-[55%] w-[1px] group-hover:w-10 transition-all duration-700 bg-white/20 group-hover:bg-green-400 transform -translate-x-1/2 hidden md:block "
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
+              className="w-10 transform px-2 font-bn text-2xl border-[1.5px] border-white/20 bg-white hover:text-black z-40 transition-all duration-700 flex items-center justify-center"
+              initial={{ height: "6rem" }} // h-24
+              animate={{
+                height: secondPhase ? "15rem" : "6rem", // h-36 or h-24
+              }}
+              transition={{ duration: 0.7, delay: 4 }}
+            >
+              <Image
+                width={50}
+                height={50}
+                alt="chakra"
+                src="/flag/Ashoka_Chakra.svg"
+              />
+            </motion.div>
+            <motion.div
+              className="h-[55%] transform -translate-x-1/2 hidden md:block"
+              initial={{
+                scaleY: 0,
+                width: "1px",
+                backgroundColor: "rgba(255,255,255,0.2)",
+              }}
+              animate={
+                secondPhase
+                  ? { scaleY: 1, width: "2.5rem", backgroundColor: "#4ade80" } // w-10, green-400
+                  : { scaleY: 1 }
+              }
               transition={{ duration: 0.75, delay: 5.1 }}
             />
           </motion.div>
