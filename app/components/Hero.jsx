@@ -74,13 +74,21 @@ export default function Hero() {
 
   // -------------------------------------------
   const [secondPhase, setSecondPhase] = useState(false);
+  const [showChakra, setShowChakra] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer1 = setTimeout(() => {
       setSecondPhase(true);
-    }, 400 + 500); // delay + duration in ms
+    }, 1250);
 
-    return () => clearTimeout(timer);
+    const timer2 = setTimeout(() => {
+      setShowChakra(true);
+    }, 6000);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, []);
   // -------------------------------------------
 
@@ -142,21 +150,40 @@ export default function Hero() {
                   ? { scaleY: 1, width: "2.5rem", backgroundColor: "#fb923c" }
                   : { scaleY: 1 }
               }
-              transition={{ duration: 0.75, delay: 4.9 }}
+              transition={{ duration: 0.5, delay: 4.9 }}
             />
             <motion.div
-              className="w-10 transform px-2 font-bn text-2xl border-[1.5px] border-white/20 bg-white hover:text-black z-40 transition-all duration-700 flex items-center justify-center"
-              initial={{ height: "6rem" }} // h-24
-              animate={{
-                height: secondPhase ? "15rem" : "6rem", // h-36 or h-24
+              className="w-10 transform bg-white hover:text-black z-40 transition-all duration-700 flex items-center justify-center"
+              initial={{
+                height: "0.5rem",
+                width: "0.5rem",
+                borderRadius: "1rem",
               }}
-              transition={{ duration: 0.7, delay: 4 }}
+              animate={
+                secondPhase
+                  ? {
+                      height: "15rem",
+                      width: "2.5rem",
+                      borderRadius: "0rem",
+                    }
+                  : {
+                      height: "5rem",
+                      width: "2.5rem",
+                      borderRadius: "0rem",
+                    }
+              }
+              transition={{ duration: 0.5, delay: 4 }}
             >
               <Image
                 width={50}
                 height={50}
                 alt="chakra"
                 src="/flag/Ashoka_Chakra.svg"
+                className={`transition-all duration-1000  ${
+                  showChakra
+                    ? "opacity-100 size-8"
+                    : "opacity-0 size-2 rotate-180"
+                } `}
               />
             </motion.div>
             <motion.div
@@ -168,10 +195,10 @@ export default function Hero() {
               }}
               animate={
                 secondPhase
-                  ? { scaleY: 1, width: "2.5rem", backgroundColor: "#4ade80" } // w-10, green-400
+                  ? { scaleY: 1, width: "2.5rem", backgroundColor: "#22c55e" }
                   : { scaleY: 1 }
               }
-              transition={{ duration: 0.75, delay: 5.1 }}
+              transition={{ duration: 0.5, delay: 5.1 }}
             />
           </motion.div>
 
