@@ -90,17 +90,17 @@ const Sponsors = ({ setIsModalOpen }) => {
               <div
                 className="bg-gradient-to-r from-slate-300 to-slate-500 p-[5px] overflow-hidden flex items-center justify-center rounded-lg h-32 w-32 md:h-44 md:w-44 rotate-45 z-40 shadow-[0px_0px_40px_#ffffff50] hover:scale-105 hover:shadow-[0px_0px_50px_#ffffff50] transition-all duration-700 ease-in-out cursor-pointer scale-50 md:scale-100"
                 onClick={() =>
-                  (window.location.href = "https://solidworks.com")
+                  (window.location.href = "https://www.onshape.com/en/")
                 }
                 ref={div3Ref}
               >
                 <div className="bg-[#0f0f0f] h-full w-full rounded-md flex items-center justify-center">
                   <Image
-                    src={`${basePath}/sponsors/solidworks.png`}
+                    src={`${basePath}/sponsors/onshape.png`}
                     alt="Altium"
-                    width={130}
+                    width={120}
                     height={60}
-                    className="-rotate-45"
+                    className="-rotate-45 scale-[2]"
                   />
                 </div>
               </div>
