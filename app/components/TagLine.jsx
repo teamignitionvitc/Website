@@ -7,7 +7,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const TagLine = () => {
   return (
-    <div className="relative py-72 text-[30px] font-bn border border-white/20 border-dashed w-full text-center overflow-hidden bg-[#0f0f0f] z-30 text-white rounded-t-lg md:rounded-t-2xl h-full">
+    <div className="relative py-72 text-[30px] font-bn border border-white/20 border-dashed w-full text-center overflow-hidden bg-black z-30 text-white rounded-t-lg md:rounded-t-2xl h-full">
       <GridPattern
         width={47.4}
         height={47.4}
