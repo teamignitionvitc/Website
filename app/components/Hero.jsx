@@ -6,6 +6,8 @@ import NumberFlow from "@number-flow/react";
 import RotatingSphere from "@/components/ui/globe";
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function Hero() {
   const controls = useAnimation();
 
@@ -178,7 +180,7 @@ export default function Hero() {
                 width={50}
                 height={50}
                 alt="ashoka-chakra"
-                src="/flag/ashoka-chakra.svg"
+                src={`${basePath}/flag/ashoka-chakra.svg`}
                 className={`transition-all duration-1000  ${
                   showChakra
                     ? "opacity-100 size-8"
