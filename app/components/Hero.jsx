@@ -76,7 +76,7 @@ export default function Hero() {
 
   // -------------------------------------------
   const [secondPhase, setSecondPhase] = useState(false);
-  const [showChakra, setShowChakra] = useState(false)
+  const [showChakra, setShowChakra] = useState(false);
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -134,7 +134,7 @@ export default function Hero() {
           </div>
 
           <motion.div
-            className="group h-16 md:h-full w-full md:w-32 flex flex-col items-center z-10"
+            className="hidden group h-16 md:h-full w-full md:w-32 md:flex flex-col items-center z-10"
             initial={{ borderRightWidth: 0 }}
             animate={{ borderRightWidth: 1 }}
             transition={{ duration: 0.75, delay: 4.7 }}
@@ -252,7 +252,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 5 }}
               />
               <div
-                className="absolute top-1/2 left-1/2 md:left-[65%] w-[150px] md:w-[200px] aspect-square rounded-full transform -translate-x-1/2 -translate-y-1/2 bg-black overflow-hidden border-[1.5px] border-white/20 hover:border-white hover:shadow-[0px_0px_20px_#ffffff] transition-all duration-500"
+                className="absolute top-1/2 left-1/2 md:left-[65%] w-[150px] md:w-[200px] aspect-square rounded-full transform -translate-x-1/2 -translate-y-1/2 bg-black overflow-hidden border-[1.5px] border-white/20 hover:border-white hover:shadow-[0px_0px_20px_#ffffff] transition-all duration-500 z-40"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
               >
@@ -296,7 +296,7 @@ export default function Hero() {
                   A relentless pursuit to challenge, learn, and innovate.
                 </p>
               </div>
-              <div className="bg-black hover:bg-white text-white hover:text-black transition-all duration-700 p-4 flex flex-col md:flex-row items-center shadow-[0px_0px_10px_rgba(255,255,255,0.2)] border-[1.5px] border-white/20 hover:shadow-[0px_0px_20px_#ffffff] hover:rounded-lg">
+              {/* <div className="bg-black hover:bg-white text-white hover:text-black transition-all duration-700 p-4 flex flex-col md:flex-row items-center shadow-[0px_0px_10px_rgba(255,255,255,0.2)] border-[1.5px] border-white/20 hover:shadow-[0px_0px_20px_#ffffff] hover:rounded-lg">
                 <h2 className="text-lg md:text-xl font-bold text-center tracking-wide font-bn md:ml-2 md:pr-4 md:mr-3 md:border-r-[1.5px] border-white/20 mb-2 md:mb-0">
                   NEXT LAUNCH
                 </h2>
@@ -335,6 +335,24 @@ export default function Hero() {
                     </div>
                   ))}
                 </div>
+              </div> */}
+              <div className="bg-white text-black transition-all duration-300 py-2  px-12 flex flex-col md:flex-row items-center justify-center hover:shadow-[0px_0px_10px_#ffffff] text-xl md:text-2xl ring-[1.5px] ring-white/40">
+                <p className="translate-y-[2px]">Explore</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-chevrons-down-icon lucide-chevrons-down translate-y-[0.5px]"
+                >
+                  <path d="m7 6 5 5 5-5" />
+                  <path d="m7 13 5 5 5-5" />
+                </svg>
               </div>
             </motion.div>
           </div>

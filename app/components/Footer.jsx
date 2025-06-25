@@ -1,9 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { MousePointer2Icon, MailIcon } from "lucide-react";
-import DotPattern from "@/components/ui/dot";
+// import DotPattern from "@/components/ui/dot";
+import GridPattern from "@/components/ui/grid";
+import { cn } from "@/lib/utils";
+import Link from "next/link"
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const Footer = ({ className = "" }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -30,39 +33,67 @@ const Footer = ({ className = "" }) => {
   if (!mounted) return null;
 
   return (
-    <div className={`relative p-4 w-full overflow-hidden bg-white text-black select-text ${className}`}>
-      <DotPattern width={20} height={20} cx={1} cy={1} cr={1} />
-      <div className={`absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "pointer-events-none"}`}>
-        <img src={`${basePath}/location/vit.png`} alt="Team Ignition" className="object-contain scale-100 mb-2" />
+    <div
+      className={`relative p-4 w-full overflow-hidden bg-white text-black select-text ${className}`}
+    >
+      <GridPattern
+        width={30}
+        height={30}
+        x={5}
+        y={-1}
+        strokeDasharray={"4 2"}
+        className={cn(
+          "[mask-image:linear-gradient(to_bottom,white,#ffffff50)]"
+        )}
+      />
+      <div
+        className={`absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ${
+          isHovered ? "opacity-100" : "pointer-events-none"
+        }`}
+      >
+        <img
+          src={`${basePath}/location/vit.png`}
+          alt="Team Ignition"
+          className="object-contain scale-100 mb-2"
+        />
         <div className="absolute transform -translate-x-1/2 -translate-y-1/2 dot"></div>
       </div>
 
       <div className="flex flex-col lg:flex-row p-4 lg:p-8 h-full relative z-10">
         {/* Find Us Card */}
-        <div className={`relative text-2xl lg:text-4xl bg-[#101010] text-white rounded-2xl w-full lg:w-[400px] p-4 flex flex-col justify-between overflow-hidden group duration-300 shadow-[0px_0px_10px_rgba(0,0,0,0.2)] mb-4 lg:mb-0`}
+        <div
+          className={`relative text-2xl lg:text-4xl bg-[#101010] text-white rounded-2xl w-full lg:w-[400px] p-4 flex flex-col justify-between overflow-hidden group duration-300 shadow-[0px_0px_10px_rgba(0,0,0,0.2)] mb-4 lg:mb-0`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className={`font-bn text-4xl lg:text-6xl -mt-1 z-10 transition-colors duration-300 ${isHovered ? "opacity-0" : "group-hover:text-black"}`}>
+          <div
+            className={`font-bn text-4xl lg:text-6xl -mt-1 z-10 transition-colors duration-300 ${
+              isHovered ? "opacity-0" : "group-hover:text-black"
+            }`}
+          >
             FIND US
           </div>
-          <div className={`font-bold w-full flex justify-end z-10 transition-colors duration-300 ${isHovered ? "opacity-0" : "group-hover:text-black"}`}>
+          <div
+            className={`font-bold w-full flex justify-end z-10 transition-colors duration-300 ${
+              isHovered ? "opacity-0" : "group-hover:text-black"
+            }`}
+          >
             <MousePointer2Icon className="h-8 w-8 animate-pulse" />
           </div>
 
           <div className="absolute inset-0 bg-white/90 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left h-full"></div>
 
           <div className="absolute inset-0 flex flex-col items-start justify-center text-black opacity-0 group-hover:opacity-100 z-20 transition-opacity duration-300 p-4 lg:p-8 font-bn text-base lg:text-lg">
-          <div>
-          <div className="font-bold text-xl lg:text-2xl mb-2">Address:</div>
-          <div className="font-semibold text-black/80">
-            Team Ignitionn Garage, AB-2 Basement 006, VIT Chennai,
-            <br />
-            Vandalur-Kelambakkam Road, Keelakotaiyur,
-            <br />
-            Chennai, Tamil Nadu – 600 127
-          </div>
-          </div>
+            <div>
+              <div className="font-bold text-xl lg:text-2xl mb-2">Address:</div>
+              <div className="font-semibold text-black/80">
+                Team Ignitionn Garage, AB-2 Basement 006, VIT Chennai,
+                <br />
+                Vandalur-Kelambakkam Road, Keelakotaiyur,
+                <br />
+                Chennai, Tamil Nadu – 600 127
+              </div>
+            </div>
           </div>
 
           <div className="absolute top-10 left-0 w-full h-full pointer-events-none">
@@ -72,32 +103,42 @@ const Footer = ({ className = "" }) => {
         </div>
 
         {/* Contact Information */}
-        <div className={`bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.2)] rounded-2xl p-4 lg:p-8 flex-1 lg:ml-8 transition-opacity duration-500 font-bn ${isHovered ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+        <div
+          className={`bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.2)] rounded-2xl p-4 lg:p-8 flex-1 lg:ml-8 transition-opacity duration-500 font-bn ${
+            isHovered ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+        >
           <div className="flex flex-col lg:flex-row h-full justify-between">
             <div className="flex flex-col items-start justify-between space-y-4 lg:space-y-0 mb-4 lg:mb-0">
               <div className="flex flex-col space-y-2">
                 <div>
                   <div className="text-sm lg:text-base">
-                    <span className="font-semibold">Captain: </span>Mohammed Ramzy
+                    <span className="font-semibold">Captain: </span>Mohammed
+                    Ramzy
                   </div>
                   <div className="text-sm lg:text-base">
-                    <span className="font-semibold">Contact:</span> +91 7592887426
+                    <span className="font-semibold">Contact:</span> +91
+                    7592887426
                   </div>
                 </div>
               </div>
               <div className="flex flex-col space-y-2">
                 <div>
                   <div className="text-sm lg:text-base">
-                    <span className="font-semibold">General Manager:</span> Kishaunjith S
+                    <span className="font-semibold">General Manager:</span>{" "}
+                    Kishaunjith S
                   </div>
                   <div className="text-sm lg:text-base">
-                    <span className="font-semibold">Contact:</span> +91 9176506408
+                    <span className="font-semibold">Contact:</span> +91
+                    9176506408
                   </div>
                 </div>
               </div>
               <div className="flex items-center">
-                <a href="mailto:teamignition@vit.ac.in"
-                  className="font-bold text-black hover:text-white bg-[#f0f0f0] hover:shadow-[0px_0px_5px_rgba(0,0,0,0.1)] hover:bg-[#101010] rounded-md transition-colors duration-300 flex items-center p-2 px-4 text-sm lg:text-base">
+                <a
+                  href="mailto:teamignition@vit.ac.in"
+                  className="font-bold text-black hover:text-white bg-[#f0f0f0] hover:shadow-[0px_0px_5px_rgba(0,0,0,0.1)] hover:bg-[#101010] rounded-md transition-colors duration-300 flex items-center p-2 px-4 text-sm lg:text-base"
+                >
                   <MailIcon size={18} className="mr-2" />
                   teamignition@vit.ac.in
                 </a>
@@ -107,7 +148,9 @@ const Footer = ({ className = "" }) => {
             {/* Social Links */}
             <div className="flex flex-col lg:flex-row items-center">
               <div className="font-bn text-4xl lg:text-6xl font-semibold text-[#101010] hidden lg:block ">
-                <div className="-rotate-90 translate-x-12 translate-y-19">LINKS</div>
+                <div className="-rotate-90 translate-x-12 translate-y-19">
+                  LINKS
+                </div>
               </div>
               <div className="overflow-hidden border border-black/10 rounded-lg w-full lg:w-auto">
                 {[
@@ -132,8 +175,17 @@ const Footer = ({ className = "" }) => {
                     roundedClass: "rounded-b-lg",
                   },
                 ].map(({ href, label, roundedClass }, idx) => (
-                  <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
-                    <div className={`bg-[#101010] text-white border-white/10 w-full lg:w-44 h-12 lg:h-[46.9px] text-center p-2 transition-all duration-300 hover:bg-black/80 hover:text-white flex items-center justify-center ${roundedClass || ""}`}>
+                  <a
+                    key={idx}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div
+                      className={`bg-[#101010] text-white border-white/10 w-full lg:w-44 h-12 lg:h-[46.9px] text-center p-2 transition-all duration-300 hover:bg-black/80 hover:text-white flex items-center justify-center ${
+                        roundedClass || ""
+                      }`}
+                    >
                       {label}
                     </div>
                   </a>
@@ -145,9 +197,15 @@ const Footer = ({ className = "" }) => {
       </div>
 
       {/* Time and Direction */}
-      <div className={`font-bn absolute top-0 right-0 lg:right-12 h-full flex justify-center items-center p-4 lg:p-8 transition-opacity duration-500 opacity-0 text-right ${isHovered ? "opacity-100" : "pointer-events-none"}`}>
+      <div
+        className={`font-bn absolute top-0 right-0 lg:right-12 h-full flex justify-center items-center p-4 lg:p-8 transition-opacity duration-500 opacity-0 text-right ${
+          isHovered ? "opacity-100" : "pointer-events-none"
+        }`}
+      >
         <div className="">
-          <div className="font-semibold text-black/80 text-sm lg:text-base">LOCAL TIME</div>
+          <div className="font-semibold text-black/80 text-sm lg:text-base">
+            LOCAL TIME
+          </div>
           <div className="text-2xl lg:text-4xl font-bold mb-6">{time}</div>
         </div>
         <div className="mx-1 -mt-6 flex flex-col items-center justify-center font-bold">
@@ -158,8 +216,17 @@ const Footer = ({ className = "" }) => {
       </div>
 
       {/* Copyright */}
-      <div className="w-full text-center pb-4 bg-white text-black font-bn font-semibold text-sm lg:text-base">
-        Copyright 2024 © Team Ignition. All Rights Reserved.
+      <div className="w-full flex flex-col md:flex-row text-center justify-between items-center pb-4 px-8 text-black font-bn font-semibold text-sm lg:text-base gap-4">
+        <p>Copyright 2025 © Team Ignition. All Rights Reserved.</p>
+        <p>
+          Made By{" "}
+          <Link
+            href="https://www.linkedin.com/in/basith-ahmed/"
+            className="underline"
+          >
+            Basith Ahmed
+          </Link>{" "}
+        </p>
       </div>
     </div>
   );

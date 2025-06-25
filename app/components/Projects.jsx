@@ -1,5 +1,6 @@
-import DotPattern from "@/components/ui/dot";
 import React from "react";
+import GridPattern from "@/components/ui/grid"
+import {cn} from "@/lib/utils"
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -79,7 +80,16 @@ const Projects = () => {
       style={{ height: totalHeight }}
     >
       <div className="w-full text-left text-[4rem] md:text-[150px] text-white bg-white h-[100px] md:h-[140px] -mb-4 flex items-center overflow-hidden relative">
-        <DotPattern />
+        <GridPattern
+                width={30}
+                height={30}
+                x={5}
+                y={-1}
+                strokeDasharray={"4 2"}
+                className={cn(
+                  "[mask-image:linear-gradient(to_right,white,#ffffff50)]"
+                )}
+              />
         <div className="text-black m-2 z-30 w-full text-right">PROJECTS</div>
       </div>
       {sections.map((section, index) => {
