@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Team Ignition — VITC",
-  description: "Rocket Club of VIT Chennai",
+  description: "Official student high power rocketry team of VIT Chennai",
 };
 
 export default function RootLayout({ children }) {
