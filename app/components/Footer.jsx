@@ -170,7 +170,7 @@ const Footer = ({ className = "" }) => {
                     roundedClass: "border-b",
                   },
                   {
-                    href: "https://in.linkedin.com/company/ignition-technologies",
+                    href: "https://www.linkedin.com/in/teamignition/",
                     label: "LinkedIn",
                     roundedClass: "rounded-b-lg",
                   },
